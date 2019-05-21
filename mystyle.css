@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+/* image shrinks horizontally nicely so not a big deal to set min-width */
+body{
+    min-width:600px;
+    margin:0;
+    font-family: 'Merriweather', serif;
+
+}
+/* flex wrapper I had to implement in order to get the footer at the bottom correctly for every page with no overlap */
+div.site-wrapper{
+    display:flex;
+    /* this is needed so it's not horizontally organized with flex */
+    flex-direction: column;
+    /* parent element will take the 100% height of the visible view */
+    min-height: 100vh;
+
+}
+
+/* validator colors, used !important because only inline styling was working so I am forcing it here so nothing overrides the color */
+input:invalid{
+    background-color: #a5a5a5 !important;
+}
+
+/* not a div */
+.nav{
+    background-color:white;
+    color: black;
+    /* removes bullets */
+    list-style:none;
+    /* aligns to right */
+    text-align:right;
+    /* top bottom left right padding */
+    padding: 15px 0 5px 0;
+    /* change font */
+    font-family: sans-serif;
+}
+div.submit{
+    text-align:center;
+}
+
+/* li's inside nav for modularity */
+.nav > li{
+    /* displays nav bar links horizontally */
+    display:inline-block;
+    /* spreads out links */
+    padding-right:30px;
+}
+/* get rid of underlined text decoration */
+.nav > li > a{
+    text-decoration:none;
+    color:black;
+}
+/* change color on hover */
+.nav>li>a:hover{
+    color:#c1c1c1;
+}
+/* logo styling */
+div.logo{
+    color: black;
+    float: left;
+    padding-top:0px;
+    padding-left:20px;
+    font-size:25px;
+    font-weight:bold;
+}
+/* any a's inside logo will have the stylings */
+div.logo > a{
+    text-decoration:none;
+    color:black;
+}
+div.banner{
+    /* display banner 100% across the page */
+    width:100%;
+    display:block;
+}
+/* adjust banner image */
+div.banner > .banner-image{
+    display:block;
+    /* center */
+    margin-left:auto;
+    margin-right:auto;
+}
+div.hometext{
+    padding-top:50px;
+    font-size:120%;
+    text-align:center;
+}
+/* wrapper magic */
+.wrapper{
+    display:flex;
+    text-align:center;
+    justify-content:center;
+
+}
+.col{
+    width:20%;
+    padding:20px;
+    font-size:larger;
+}
+.col1{
+    background:#e6e6e6;
+}
+
+/* turning off link highlighting */
+.col1 > a{
+    text-decoration:none;
+    color:black;
+}
+.col2 > a{
+    text-decoration:none;
+    color:black;
+}
+.col2{
+    background:#F0E68C;
+}
+.col1:hover{
+    background:#a6a6a6;
+}
+.col2:hover{
+    background:#e7d74b;
+}
+
+/* i have adopted this from an online source,
+this is apparently to have it work
+on some browsers, but I am not 
+specifically sure, removing it 
+does not appear to do anything but
+I am keeping it just in case */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+form {
+    text-align:left;
+    max-width: 300px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+
+}
+h1 {
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+/* tutorial i used for this said to include
+all the input types */
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], textarea, select {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    margin-bottom: 30px;
+
+
+
+}
+input[type="radio"], input[type="checkbox"] {
+    margin: 0 4px 8px 0;
+}
+select {
+    padding: 6px;
+    height: 32px;
+    border-radius: 2px;
+}
+button {
+    padding: 19px 39px 18px 39px;
+    color: black;
+    background-color: #F0E68C;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+/* darker yellow on mouse hover */
+button:hover{
+    background-color:#e7d74b;
+}
+
+/* styling of the Maps API  */
+#map{
+    height:500px;
+    margin-left:auto;
+    margin-right:auto;
+    width:60%;
+}
+
+div.loginform{
+    text-align:left;
+}
+
+div.emptyAlert{
+    text-align:center;
+}
+#imagePark img{
+    max-width:60%;
+    max-height:60%;
+    display:block;
+    margin:auto;
+}
+
+div.thankyou{
+    text-align:center;
+}
+/* min-width for iphone testing,
+max for showing up better on
+larger screens with the centered feel */
+@media screen and (min-width: 375px) {
+    #reviewform{
+        max-width: 40%;
+        margin-left:30%;
+        border:1px solid #000;
+        background-color: #f1c7ed00;
+        border-radius: 5px;
+        /* more vertical space */
+        padding: 16px;
+        text-align: left;
+    }
+    form {
+        max-width: 480px;
+    }
+    /* display:block starts img on a new line, and takes up the whole width centered from margin-left/right auto */
+    .sample {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .citywide{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* center table */
+    table{
+        margin-left:auto;
+        margin-right:auto;
+        /* remove space between cells */
+        border-collapse:collapse;
+    }
+    /* adjust the table header */
+    .resulttable th{
+        text-align:left;
+        background-color:#F0E68C;
+        padding:4px 30px 4px 8px;
+    }
+    /* style the data rows */
+    .resulttable td{
+        text-align:left;
+        border:0.5px solid grey;
+        padding: 4px 8px;
+    }
+    .tableinfo{
+        text-align:center;
+    }
+    .resultstext{
+        text-align:center;
+    }
+    /* testomonial stylings */
+    /* Style the container with a rounded border, grey background */
+    .container {
+        max-width: 40%;
+        margin-left:30%;
+        border:1px solid #000;
+        background-color: #fff4a026;
+        border-radius: 5px;
+        /* more vertical space */
+        padding: 16px;
+        text-align: left;
+    }
+
+    /* centered footer spanning across */
+    div.footer{
+        width:100%;
+        text-align:center;
+    }
+    /* videos are inline elements, therefore centering happens with text-align */
+    div.vid{
+        text-align:center;
+    }
+}
+ 
